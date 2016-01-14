@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mardown Editor</title>
+	<link href="css/highlight.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" type="text/css" href="css/typo.css">
+	<link rel="stylesheet" type="text/css" href="css/typo.css">  
 </head>
 <body>
 	<section id='edit-window' class='edit-window'>
@@ -36,7 +37,37 @@
 
 		</section>
 	</section>
-	<script type="text/javascript" src='lib/marked.min.js'></script>
 	<script type="text/javascript" src='js/app.js'></script>
+	<script src="js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script type="text/javascript" src='lib/marked.min.js'></script>
+	<script type="text/javascript" src='js/jquery.min.js'></script>
+	<script type="text/javascript">
+		var $divs = $('textarea#edit-area, section#view-content');
+		var sync = function(e){
+   			var $other = $divs.not(this).off('scroll'), other = $other.get(0);
+   			var percentage = this.scrollTop / (this.scrollHeight - this.offsetHeight);
+   			other.scrollTop = percentage * (other.scrollHeight - other.offsetHeight);
+   			setTimeout( function(){ $other.on('scroll', sync ); },200);
+		}
+		$divs.on('scroll', sync);
+	</script>
+	<script type="text/javascript">
+		marked.setOptions({ 
+			renderer: new marked.Renderer(), 
+			gfm: true, 
+			tables: true, 
+			breaks: true, 
+			pedantic: false, 
+			sanitize: false, 
+			smartLists: false, 
+			smartypants: false, 
+			highlight: function (code) { 
+				return hljs.highlightAuto(code).value; 
+			} 
+		}); 
+		var article = $('#article').val(); 
+		$('.article').html(marked(article));
+	</script>
 </body>
 </html>

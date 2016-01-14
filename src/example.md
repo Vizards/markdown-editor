@@ -31,7 +31,7 @@ __粗体__
 
 >> 嵌套第二层
 
-点 [这个链接](https://github.com/wy-ei/markdown-editor “markdown editor”)  去github查看源代码。
+点 [这个链接](https://github.com/vizards/markdown-editor “markdown editor”)  去github查看源代码。
 
 插入图片
 
