@@ -135,7 +135,9 @@ body{
 #exit-edit-full-screen{
 	display: none;
 }
-
+#exit-edit-night{
+	display: none;
+}
 .edit-full-screen-mode #edit-full-screen{
 	display: none;
 }
@@ -195,7 +197,12 @@ body{
 	margin: auto;
 	height: 100%;
 }
-
+.save .save-html{
+	display: none;
+}
+.save .save-markdwon{
+	display: none;
+}
 
  body.preview-mode{
 	overflow: auto;

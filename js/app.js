@@ -32,6 +32,31 @@ window.addEventListener('load', function () {
         }, false);
     }();
 
+    //handle night mode button click event
+    ! function () {
+        var nightmode = document.getElementById('edit-night');
+        nightmode.addEventListener('click',function(){
+        document.getElementById('edit-window').style.backgroundColor = '#36312C';
+        editarea.style.backgroundColor = '#36312C';
+        document.getElementById('edit-window').style.color = "white";
+        editarea.style.color = '#EBD1B7';
+        nightmode.style.display = 'none';
+        document.getElementById('exit-edit-night').style.display = 'block';
+        },false);
+    }();
+
+    //handle exit-mode button click event
+    ! function () {
+        var exitnightmode = document.getElementById('exit-edit-night');
+        exitnightmode.addEventListener('click',function(){
+            document.getElementById('edit-window').style.backgroundColor = 'white';
+            editarea.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            editarea.style.color = 'black';
+            exitnightmode.style.display = 'none';
+            document.getElementById('edit-night').style.display = 'block';
+        },false);
+    }();
 
     // handle exit full screen edit button click event
     ! function () {
@@ -43,8 +68,6 @@ window.addEventListener('load', function () {
             document.body.classList.remove('preview-mode');
         }, false);
     }();
-
-
 
     // handle  exit full screen preview button click event
     ! function () {
@@ -64,10 +87,28 @@ window.addEventListener('load', function () {
             document.body.classList.remove('edit-full-screen-mode');
             document.body.classList.add('preview-mode');
 
-            alert('请使用浏览器自带的打印功能打印此页面');
+            window.print();
         }, false);
     }();
 
+    ! function () {
+        var saveashtml = document.getElementById('save-as-html');
+        saveashtml.addEventListener('click',function () {
+            document.body.classList.remove('edit-full-screen-mode');
+            document.body.classList.add('preview-mode');
+
+            alert('请右键点击网页选择另存为html')
+        },false);
+    }();
+
+    ! function () {
+        var saveasmarkdown = document.getElementById('save-as-markdown');
+        saveasmarkdown.addEventListener('click',function () {
+            document.body.classList.remove('edit-full-screen-mode');
+            document.body.classList.add('preview-mode');
+            
+        },false);
+    }();
 
     //every 5 sec save the text into localStorage
     ! function () {
