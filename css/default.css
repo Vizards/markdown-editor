@@ -207,6 +207,15 @@ body{
  body.preview-mode{
 	overflow: auto;
 }
+/* 滚动条样式仅对webkit内核的浏览器有效 */
+
+::-webkit-scrollbar-track {
+/* 留空表示不显示滚动条 */
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0); /* 滑块的颜色设置为透明 */
+}
 
 @media print{
 	.content{
