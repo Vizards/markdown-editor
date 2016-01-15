@@ -10,7 +10,7 @@
 <body>
 	<section id='edit-window' class='edit-window'>
 			<section class='tool-bar'>
-				<h1><a href='https://github.com/wy-ei/markdown-editor'>Markdown Editor v1.1</a></h1>
+				<h1><a href='https://github.com/Vizards/markdown-editor'>Markdown Editor v1.1</a></h1>
 				<ul>
 					<li id='edit-full-screen'>全屏编辑</li>
 					<li id='edit-night'>夜间模式</li>
@@ -37,10 +37,16 @@
 
 		</section>
 	</section>
+	<script type="text/javascript" src='lib/marked.js'></script>
 	<script type="text/javascript" src='js/app.js'></script>
 	<script src="js/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
-	<script type="text/javascript" src='lib/marked.min.js'></script>
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ 
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
 	<script type="text/javascript" src='js/jquery.min.js'></script>
 	<script type="text/javascript">
 		var $divs = $('textarea#edit-area, section#view-content');
@@ -66,8 +72,7 @@
 				return hljs.highlightAuto(code).value; 
 			} 
 		}); 
-		var article = $('#article').val(); 
-		$('.article').html(marked(article));
 	</script>
+	<script type="text/javascript" src="js/filesaver.min.js"></script>
 </body>
 </html>
