@@ -11,7 +11,7 @@
 ### 三级标题
 
 *斜体* 
-_斜体_
+> 注：为了避免与LaTeX冲突，请不要使用 _斜体_ 来表示斜体
 
 **粗体**
 __粗体__
@@ -49,4 +49,9 @@ __粗体__
 }();
 
 ```
+
+插入LaTeX公式
+
+When $a \ne 0$, there are two solutions to $$(ax^2 + bx + c = 0\)$$ and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
