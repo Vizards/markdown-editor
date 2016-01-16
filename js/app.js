@@ -102,8 +102,6 @@ window.addEventListener('load', function () {
             var mhtoutput = new Blob([mht],{type:"text/plain;charset=utf-8"});
             saveAs(mhtoutput,"untitled.html");
 
-            //alert("请右键点击网页选择另存为HTML");
-
         },false);
     }();
 
